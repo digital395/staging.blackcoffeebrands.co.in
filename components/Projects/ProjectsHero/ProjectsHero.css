@@ -1,0 +1,404 @@
+/* =========================================
+   PROJECTS HERO
+========================================= */
+
+.projects-hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  overflow: hidden;
+
+  background: #000;
+  color: #fff;
+
+  isolation: isolate;
+}
+
+
+/* =========================================
+   BACKGROUND IMAGE
+========================================= */
+
+.projects-hero-bg {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-image: url("/images/projects/hero.jpg");
+
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  z-index: 0;
+
+  transform: scale(1.01);
+
+  animation: projectsHeroZoom 20s ease-in-out infinite alternate;
+}
+
+
+/* =========================================
+   SUBTLE IMAGE ZOOM
+========================================= */
+
+@keyframes projectsHeroZoom {
+  0% {
+    transform: scale(1.01);
+  }
+
+  100% {
+    transform: scale(1.06);
+  }
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.projects-hero-container {
+  position: relative;
+
+  width: 100%;
+ 
+
+  margin: 0 auto;
+
+  padding:
+    150px
+    clamp(100px)
+    90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  z-index: 2;
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.projects-hero-content {
+  position: relative;
+
+  width: 100%;
+  max-width: 1000px;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.projects-hero-label {
+  display: block;
+
+  margin-bottom: 24px;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 0.28em;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.projects-hero h1 {
+  margin: 0;
+
+  color: #fff;
+
+  font-size:
+    clamp(72px, 11vw, 175px);
+
+  line-height: 0.82;
+
+  font-weight: 600;
+
+  letter-spacing: -0.075em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.projects-hero p {
+  max-width: 470px;
+
+  margin: 32px 0 0;
+
+  color: rgba(255, 255, 255, 0.78);
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================
+   SCROLL INDICATOR
+========================================= */
+
+.projects-hero-scroll {
+  position: absolute;
+
+  right: clamp(25px, 5vw, 80px);
+  bottom: 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color: rgba(255, 255, 255, 0.7);
+
+  font-size: 8px;
+
+  letter-spacing: 0.25em;
+
+  z-index: 5;
+}
+
+
+/* =========================================
+   SCROLL ICON
+========================================= */
+
+.projects-hero-scroll i {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.45);
+
+  color: #fff;
+
+  font-size: 18px;
+
+  font-style: normal;
+
+  background: rgba(0, 0, 0, 0.15);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.projects-hero-scroll i:hover {
+  background: rgba(199, 161, 92, 0.15);
+
+  border-color: #c7a15c;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .projects-hero {
+    min-height: 65vh;
+    min-height: 65svh;
+  }
+
+  .projects-hero-container {
+    min-height: 65vh;
+    min-height: 65svh;
+
+    padding:
+      130px
+      7vw
+      85px;
+  }
+
+  .projects-hero h1 {
+    font-size:
+      clamp(64px, 14vw, 120px);
+  }
+
+  .projects-hero p {
+    max-width: 390px;
+
+    margin-top: 26px;
+
+    font-size: 13px;
+  }
+
+  .projects-hero-scroll {
+    right: 6vw;
+    bottom: 30px;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .projects-hero {
+    min-height: 60vh;
+    min-height: 60svh;
+  }
+
+  .projects-hero-bg {
+    background-position: center center;
+
+    transform: scale(1.01);
+
+    animation: projectsHeroZoomMobile 20s ease-in-out
+      infinite alternate;
+  }
+
+  .projects-hero-container {
+    min-height: 60vh;
+    min-height: 60svh;
+
+    padding:
+      110px
+      24px
+      80px;
+
+    align-items: center;
+  }
+
+  .projects-hero-content {
+    width: 100%;
+  }
+
+  .projects-hero-label {
+    margin-bottom: 18px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.22em;
+
+    line-height: 1.5;
+  }
+
+  .projects-hero h1 {
+    font-size:
+      clamp(55px, 18vw, 90px);
+
+    line-height: 0.85;
+
+    letter-spacing: -0.07em;
+
+    white-space: normal;
+  }
+
+  .projects-hero p {
+    max-width: 300px;
+
+    margin-top: 24px;
+
+    font-size: 12px;
+
+    line-height: 1.65;
+  }
+
+  .projects-hero-scroll {
+    right: 20px;
+    bottom: 20px;
+
+    gap: 7px;
+
+    font-size: 7px;
+  }
+
+  .projects-hero-scroll i {
+    width: 34px;
+    height: 34px;
+
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 380px) {
+  .projects-hero {
+    min-height: 56vh;
+    min-height: 56svh;
+  }
+
+  .projects-hero-container {
+    min-height: 56vh;
+    min-height: 56svh;
+
+    padding:
+      100px
+      20px
+      75px;
+  }
+
+  .projects-hero h1 {
+    font-size: 54px;
+  }
+
+  .projects-hero p {
+    max-width: 270px;
+
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================
+   MOBILE IMAGE ZOOM
+========================================= */
+
+@keyframes projectsHeroZoomMobile {
+  0% {
+    transform: scale(1.01);
+  }
+
+  100% {
+    transform: scale(1.04);
+  }
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-hero-bg {
+    animation: none;
+    transform: scale(1.01);
+  }
+}

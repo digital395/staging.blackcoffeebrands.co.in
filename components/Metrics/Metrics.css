@@ -1,0 +1,432 @@
+/* =========================================================
+   METRICS SECTION
+========================================================= */
+
+.metrics-section {
+  position: relative;
+  width: 100%;
+  min-height: 620px;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(194, 154, 92, 0.045),
+      transparent 32%
+    ),
+    #171816;
+
+  color: #ffffff;
+
+  padding: 95px 5.8% 85px;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.metrics-container {
+  position: relative;
+  z-index: 2;
+
+  width: 100%;
+  max-width: 1700px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.metrics-heading {
+  margin-bottom: 58px;
+}
+
+.metrics-eyebrow {
+  display: block;
+
+  margin-bottom: 18px;
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.38);
+}
+
+.metrics-heading h2 {
+  margin: 0;
+
+  font-size: clamp(48px, 4.2vw, 76px);
+
+  line-height: 1.08;
+
+  font-weight: 600;
+
+  letter-spacing: -0.055em;
+
+  color: #ffffff;
+}
+
+.metrics-heading h2 span {
+  display: inline-block;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.metrics-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: 10px;
+  row-gap: 0;
+
+  perspective: 1200px;
+}
+
+
+/* =========================================================
+   METRIC ITEM
+========================================================= */
+
+.metric-item {
+  position: relative;
+
+  min-height: 138px;
+
+  display: flex;
+  align-items: flex-start;
+
+  padding: 20px 20px 30px 0;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+  overflow: hidden;
+
+  transform-style: preserve-3d;
+
+  cursor: default;
+}
+
+
+/* Bottom border */
+
+.metric-item:nth-child(3),
+.metric-item:nth-child(4) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+/* Right column spacing */
+
+.metric-item:nth-child(even) {
+  padding-left: 0;
+  padding-right: 25px;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.metric-number {
+  flex: 0 0 auto;
+
+  min-width: 175px;
+
+  font-size: clamp(62px, 5vw, 92px);
+
+  line-height: 0.92;
+
+  font-weight: 300;
+
+  letter-spacing: -0.075em;
+
+  color: #ffffff;
+
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    letter-spacing 0.5s ease;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.metric-description {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-start;
+
+  padding-top: 7px;
+
+  font-size: clamp(18px, 1.35vw, 25px);
+
+  line-height: 1.35;
+
+  font-weight: 300;
+
+  letter-spacing: -0.035em;
+
+  color: rgba(255, 255, 255, 0.94);
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.metric-item:hover .metric-number {
+  transform: translate3d(8px, 0, 20px);
+
+  letter-spacing: -0.065em;
+}
+
+.metric-item:hover .metric-description {
+  color: #ffffff;
+}
+
+
+/* =========================================================
+   CINEMATIC SHINE
+========================================================= */
+
+.metric-shine {
+  position: absolute;
+
+  left: -120%;
+
+  bottom: 0;
+
+  width: 80%;
+  height: 1px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(214, 177, 119, 0.8),
+    transparent
+  );
+
+  transition: left 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.metric-item:hover .metric-shine {
+  left: 120%;
+}
+
+
+/* =========================================================
+   BACKGROUND GLOW
+========================================================= */
+
+.metrics-glow {
+  position: absolute;
+
+  pointer-events: none;
+
+  border-radius: 50%;
+
+  filter: blur(90px);
+
+  opacity: 0.25;
+
+  z-index: 0;
+}
+
+.metrics-glow-one {
+  width: 380px;
+  height: 380px;
+
+  left: -180px;
+  top: 80px;
+
+  background: rgba(197, 155, 93, 0.08);
+}
+
+.metrics-glow-two {
+  width: 320px;
+  height: 320px;
+
+  right: -160px;
+  bottom: -120px;
+
+  background: rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================================================
+   DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+  .metrics-section {
+    padding-top: 105px;
+    padding-bottom: 95px;
+  }
+
+  .metrics-heading {
+    margin-bottom: 65px;
+  }
+
+  .metric-item {
+    min-height: 150px;
+  }
+
+  .metric-number {
+    min-width: 180px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .metrics-section {
+    padding: 80px 6%;
+  }
+
+  .metrics-heading {
+    margin-bottom: 50px;
+  }
+
+  .metric-number {
+    min-width: 145px;
+  }
+
+  .metric-description {
+    font-size: 20px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+  .metrics-section {
+    min-height: auto;
+
+    padding: 75px 22px 70px;
+  }
+
+  .metrics-heading {
+    margin-bottom: 42px;
+  }
+
+  .metrics-eyebrow {
+    font-size: 8px;
+
+    letter-spacing: 0.2em;
+
+    margin-bottom: 14px;
+  }
+
+  .metrics-heading h2 {
+    font-size: clamp(42px, 11vw, 60px);
+
+    line-height: 1.03;
+
+    letter-spacing: -0.06em;
+  }
+
+  .metrics-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-item,
+  .metric-item:nth-child(even) {
+    min-height: 125px;
+
+    padding: 25px 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+
+    border-bottom: none;
+  }
+
+  .metric-item:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .metric-number {
+    min-width: 125px;
+
+    font-size: clamp(55px, 15vw, 76px);
+  }
+
+  .metric-description {
+    padding-top: 5px;
+
+    font-size: 18px;
+
+    line-height: 1.3;
+  }
+
+  .metric-item:hover .metric-number {
+    transform: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+  .metrics-section {
+    padding: 65px 18px;
+  }
+
+  .metrics-heading {
+    margin-bottom: 35px;
+  }
+
+  .metrics-heading h2 {
+    font-size: 42px;
+  }
+
+  .metric-item {
+    min-height: 110px;
+  }
+
+  .metric-number {
+    min-width: 105px;
+
+    font-size: 52px;
+  }
+
+  .metric-description {
+    font-size: 16px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .metric-item,
+  .metric-number,
+  .metric-shine {
+    transition: none !important;
+  }
+}

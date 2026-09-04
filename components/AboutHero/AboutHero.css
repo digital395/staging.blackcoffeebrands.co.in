@@ -1,0 +1,687 @@
+/* =========================================================
+   ABOUT HERO
+========================================================= */
+
+.about-hero {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  overflow: hidden;
+
+  background: #000;
+
+  color: #fff;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND IMAGE
+========================================================= */
+
+.about-hero-bg {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-image: url("/images/about/herosection.jpg");
+
+  background-position: center center;
+
+  background-repeat: no-repeat;
+
+  background-size: cover;
+
+  z-index: -3;
+
+  transform: scale(1.01);
+
+  animation:
+    aboutHeroZoom
+    20s
+    ease-in-out
+    infinite
+    alternate;
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   DARK CINEMATIC OVERLAY
+========================================================= */
+
+.about-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -2;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.62) 0%,
+      rgba(0, 0, 0, 0.38) 45%,
+      rgba(0, 0, 0, 0.22) 100%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0.05) 45%,
+      rgba(0, 0, 0, 0.55) 100%
+    );
+}
+
+
+/* =========================================================
+   GRAIN
+========================================================= */
+
+.about-hero-grain {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  opacity: 0.075;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.65'/%3E%3C/svg%3E");
+
+  background-repeat: repeat;
+
+  mix-blend-mode: soft-light;
+}
+
+
+/* =========================================================
+   IMAGE ZOOM
+========================================================= */
+
+@keyframes aboutHeroZoom {
+  0% {
+    transform: scale(1.01);
+  }
+
+  100% {
+    transform: scale(1.06);
+  }
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.about-hero-container {
+  position: relative;
+
+  width: 100%;
+
+  min-height: 100vh;
+  min-height: 100svh;
+
+  margin: 0 auto;
+
+  padding:
+    150px
+    clamp(24px, 7vw, 110px)
+    90px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  box-sizing: border-box;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.about-hero-content {
+  position: relative;
+
+  width: 100%;
+
+  max-width: 1000px;
+
+  transform-style: preserve-3d;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.about-hero-label {
+  display: block;
+
+  margin-bottom: 24px;
+
+  color:
+    rgba(255, 255, 255, 0.78);
+
+  font-size: 10px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.28em;
+
+  line-height: 1.5;
+
+  text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.about-hero h1 {
+  margin: 0;
+
+  color: #fff;
+
+  font-size:
+    clamp(72px, 11vw, 175px);
+
+  line-height: 0.82;
+
+  font-weight: 600;
+
+  letter-spacing: -0.075em;
+
+  text-transform: uppercase;
+
+  white-space: nowrap;
+
+  text-shadow:
+    0 10px 40px
+    rgba(0, 0, 0, 0.35);
+
+  will-change: transform;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.about-hero p {
+  max-width: 470px;
+
+  margin:
+    32px 0 0;
+
+  color:
+    rgba(255, 255, 255, 0.78);
+
+  font-size: 14px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   SCROLL INDICATOR
+========================================================= */
+
+.about-hero-scroll {
+  position: absolute;
+
+  right: clamp(25px, 5vw, 80px);
+
+  bottom: 40px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 10px;
+
+  color:
+    rgba(255, 255, 255, 0.72);
+
+  font-size: 8px;
+
+  letter-spacing: 0.25em;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   SCROLL BUTTON
+========================================================= */
+
+.about-hero-scroll i {
+  width: 42px;
+  height: 42px;
+
+  display: grid;
+
+  place-items: center;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.45);
+
+  color: #fff;
+
+  font-size: 18px;
+
+  font-style: normal;
+
+  background:
+    rgba(0, 0, 0, 0.15);
+
+  backdrop-filter: blur(8px);
+
+  -webkit-backdrop-filter: blur(8px);
+
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+
+.about-hero-scroll i:hover {
+  background:
+    rgba(199, 161, 92, 0.15);
+
+  border-color:
+    #c7a15c;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .about-hero-container {
+    padding:
+      140px
+      7vw
+      85px;
+  }
+
+  .about-hero h1 {
+    font-size:
+      clamp(65px, 14vw, 130px);
+  }
+
+  .about-hero p {
+    max-width: 420px;
+
+    margin-top: 28px;
+
+    font-size: 13px;
+  }
+
+  .about-hero-scroll {
+    right: 6vw;
+
+    bottom: 32px;
+  }
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .about-hero {
+    min-height: 75vh;
+    min-height: 75svh;
+  }
+
+  .about-hero-container {
+    min-height: 75vh;
+    min-height: 75svh;
+
+    padding:
+      130px
+      6vw
+      80px;
+
+    align-items: center;
+  }
+
+  .about-hero-content {
+    max-width: 850px;
+  }
+
+  .about-hero-label {
+    margin-bottom: 20px;
+
+    font-size: 9px;
+  }
+
+  .about-hero h1 {
+    font-size:
+      clamp(60px, 13vw, 115px);
+  }
+
+  .about-hero p {
+    max-width: 390px;
+
+    margin-top: 26px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .about-hero {
+    min-height: 68vh;
+    min-height: 68svh;
+
+    height: auto;
+  }
+
+
+  /* -------------------------
+     MOBILE IMAGE
+  ------------------------- */
+
+  .about-hero-bg {
+    background-position:
+      center center;
+
+    transform: scale(1.01);
+
+    animation:
+      aboutHeroZoomMobile
+      20s
+      ease-in-out
+      infinite
+      alternate;
+  }
+
+
+  /* -------------------------
+     MOBILE OVERLAY
+  ------------------------- */
+
+  .about-hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.48) 0%,
+        rgba(0, 0, 0, 0.28) 35%,
+        rgba(0, 0, 0, 0.68) 100%
+      );
+  }
+
+
+  /* -------------------------
+     CONTAINER
+  ------------------------- */
+
+  .about-hero-container {
+    min-height: 68vh;
+    min-height: 68svh;
+
+    padding:
+      110px
+      24px
+      75px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+  }
+
+
+  /* -------------------------
+     CONTENT
+  ------------------------- */
+
+  .about-hero-content {
+    width: 100%;
+
+    max-width: 100%;
+
+    padding: 0;
+  }
+
+
+  /* -------------------------
+     LABEL
+  ------------------------- */
+
+  .about-hero-label {
+    margin-bottom: 18px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.22em;
+
+    line-height: 1.5;
+  }
+
+
+  /* -------------------------
+     TITLE
+  ------------------------- */
+
+  .about-hero h1 {
+    width: 100%;
+
+    font-size:
+      clamp(52px, 17vw, 88px);
+
+    line-height: 0.86;
+
+    letter-spacing: -0.07em;
+
+    white-space: normal;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  /* -------------------------
+     DESCRIPTION
+  ------------------------- */
+
+  .about-hero p {
+    max-width: 310px;
+
+    margin-top: 24px;
+
+    font-size: 12px;
+
+    line-height: 1.65;
+
+    color:
+      rgba(255, 255, 255, 0.72);
+  }
+
+
+  /* -------------------------
+     SCROLL
+  ------------------------- */
+
+  .about-hero-scroll {
+    right: 20px;
+
+    bottom: 20px;
+
+    gap: 7px;
+
+    font-size: 7px;
+
+    letter-spacing: 0.2em;
+  }
+
+
+  .about-hero-scroll i {
+    width: 34px;
+
+    height: 34px;
+
+    font-size: 15px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 380px) {
+
+  .about-hero {
+    min-height: 64vh;
+    min-height: 64svh;
+  }
+
+  .about-hero-container {
+    min-height: 64vh;
+    min-height: 64svh;
+
+    padding:
+      100px
+      20px
+      70px;
+  }
+
+  .about-hero-label {
+    font-size: 6.5px;
+
+    letter-spacing: 0.18em;
+  }
+
+  .about-hero h1 {
+    font-size: 50px;
+
+    letter-spacing: -0.065em;
+  }
+
+  .about-hero p {
+    max-width: 270px;
+
+    margin-top: 20px;
+
+    font-size: 11px;
+  }
+
+  .about-hero-scroll {
+    right: 16px;
+
+    bottom: 16px;
+  }
+
+  .about-hero-scroll i {
+    width: 31px;
+
+    height: 31px;
+
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+========================================================= */
+
+@media (max-width: 900px) and (orientation: landscape) {
+
+  .about-hero {
+    min-height: 100svh;
+  }
+
+  .about-hero-container {
+    min-height: 100svh;
+
+    padding:
+      100px
+      6vw
+      60px;
+  }
+
+  .about-hero h1 {
+    font-size:
+      clamp(55px, 10vw, 90px);
+  }
+
+  .about-hero p {
+    max-width: 380px;
+
+    margin-top: 18px;
+
+    font-size: 11px;
+  }
+
+  .about-hero-scroll {
+    bottom: 18px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE IMAGE ZOOM
+========================================================= */
+
+@keyframes aboutHeroZoomMobile {
+
+  0% {
+    transform: scale(1.01);
+  }
+
+  100% {
+    transform: scale(1.045);
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about-hero-bg {
+    animation: none;
+
+    transform: scale(1.01);
+  }
+}

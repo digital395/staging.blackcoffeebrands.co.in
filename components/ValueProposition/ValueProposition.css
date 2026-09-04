@@ -1,0 +1,915 @@
+/* =========================================================
+   VALUE PROPOSITION
+========================================================= */
+
+.value-section {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+
+  padding: 120px 5vw 130px;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 18% 45%,
+      rgba(207, 165, 105, 0.09),
+      transparent 30%
+    ),
+    #171816;
+
+  color: #ffffff;
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.value-grid {
+  position: absolute;
+  inset: 0;
+
+  z-index: -3;
+
+  opacity: 0.13;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.12) 1px,
+      transparent 1px
+    );
+
+  background-size: 72px 100%;
+}
+
+
+/* Moving grid */
+
+.value-grid::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(202, 162, 104, 0.08),
+      transparent
+    );
+
+  transform: translateX(-100%);
+
+  animation: valueGridSweep 8s ease-in-out infinite;
+}
+
+@keyframes valueGridSweep {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  50% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
+/* =========================================================
+   CINEMATIC NOISE
+========================================================= */
+
+.value-noise {
+  position: absolute;
+  inset: 0;
+
+  z-index: -2;
+
+  opacity: 0.035;
+
+  pointer-events: none;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   GLOWS
+========================================================= */
+
+.value-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+.value-glow-one {
+  width: 480px;
+  height: 480px;
+
+  left: -250px;
+  top: 25%;
+
+  background: rgba(202, 162, 104, 0.08);
+}
+
+.value-glow-two {
+  width: 380px;
+  height: 380px;
+
+  right: -200px;
+  bottom: 0;
+
+  background: rgba(255, 255, 255, 0.035);
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.value-container {
+  position: relative;
+
+  width: 100%;
+  max-width: 1700px;
+
+  margin: auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.value-header {
+  position: relative;
+
+  margin-bottom: 70px;
+}
+
+.value-eyebrow {
+  display: block;
+
+  margin-bottom: 18px;
+
+  font-size: 10px;
+
+  letter-spacing: 0.32em;
+
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.value-header h2 {
+  margin: 0;
+
+  font-size: clamp(48px, 5vw, 86px);
+
+  line-height: 0.98;
+
+  font-weight: 500;
+
+  letter-spacing: -0.065em;
+}
+
+.value-header h2 span {
+  color: rgba(255, 255, 255, 0.96);
+}
+
+.value-title-line {
+  width: 80px;
+  height: 2px;
+
+  margin-top: 28px;
+
+  background: #c9a36a;
+}
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.value-content {
+  display: grid;
+
+  grid-template-columns: 40% 60%;
+
+  align-items: center;
+
+  gap: 4vw;
+}
+
+
+/* =========================================================
+   IMAGE AREA
+========================================================= */
+
+.value-visual {
+  position: relative;
+
+  min-height: 540px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  perspective: 1400px;
+}
+
+
+/* Image card */
+
+.value-image-card {
+  position: relative;
+
+  width: min(440px, 90%);
+
+  aspect-ratio: 0.85;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  transform-style: preserve-3d;
+
+  border: 1px solid rgba(201, 163, 106, 0.2);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(201, 163, 106, 0.07),
+      rgba(255, 255, 255, 0.015)
+    );
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.45),
+    inset 0 0 60px rgba(255, 255, 255, 0.02);
+
+  overflow: hidden;
+}
+
+
+/* Image */
+
+.value-image-card img {
+  position: relative;
+
+  width: 90%;
+  height: 90%;
+
+  object-fit: contain;
+
+  z-index: 2;
+
+  filter:
+    drop-shadow(0 25px 35px rgba(0, 0, 0, 0.45));
+
+  transform: translateZ(45px);
+
+  transition:
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* Image hover */
+
+.value-image-card:hover img {
+  transform:
+    translateZ(70px)
+    scale(1.035);
+}
+
+
+/* =========================================================
+   IMAGE GLOW
+========================================================= */
+
+.value-image-glow {
+  position: absolute;
+
+  width: 70%;
+  height: 70%;
+
+  border-radius: 50%;
+
+  background: rgba(201, 163, 106, 0.12);
+
+  filter: blur(70px);
+
+  z-index: 0;
+}
+
+
+/* Reflection */
+
+.value-image-reflection {
+  position: absolute;
+
+  width: 150%;
+  height: 35%;
+
+  top: -25%;
+  left: -30%;
+
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.08),
+    transparent 70%
+  );
+
+  transform: rotate(-20deg);
+
+  animation: reflectionMove 6s ease-in-out infinite;
+}
+
+@keyframes reflectionMove {
+  0% {
+    transform: translateX(-40%) rotate(-20deg);
+  }
+
+  45%,
+  100% {
+    transform: translateX(100%) rotate(-20deg);
+  }
+}
+
+
+/* =========================================================
+   ORBITS
+========================================================= */
+
+.value-orbit {
+  position: absolute;
+
+  border: 1px solid rgba(201, 163, 106, 0.16);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+}
+
+.orbit-one {
+  width: 470px;
+  height: 470px;
+
+  animation: orbitRotate 18s linear infinite;
+}
+
+.orbit-two {
+  width: 540px;
+  height: 280px;
+
+  transform: rotate(-25deg);
+
+  animation: orbitRotateReverse 14s linear infinite;
+}
+
+@keyframes orbitRotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbitRotateReverse {
+  from {
+    transform: rotate(-25deg);
+  }
+
+  to {
+    transform: rotate(335deg);
+  }
+}
+
+
+/* =========================================================
+   FLOATING LABEL
+========================================================= */
+
+.value-floating-label {
+  position: absolute;
+
+  left: 5%;
+  bottom: 7%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 14px;
+
+  padding: 13px 18px;
+
+  border: 1px solid rgba(201, 163, 106, 0.25);
+
+  background: rgba(18, 19, 17, 0.72);
+
+  backdrop-filter: blur(15px);
+
+  z-index: 5;
+}
+
+.value-floating-label span {
+  color: #c9a36a;
+
+  font-size: 11px;
+}
+
+.value-floating-label strong {
+  font-size: 9px;
+
+  letter-spacing: 0.2em;
+
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.value-details {
+  position: relative;
+
+  max-width: 780px;
+}
+
+
+/* Intro */
+
+.value-intro {
+  max-width: 720px;
+
+  margin: 0 0 55px;
+
+  font-size: clamp(17px, 1.3vw, 22px);
+
+  line-height: 1.55;
+
+  font-weight: 300;
+
+  letter-spacing: -0.025em;
+
+  color: rgba(255, 255, 255, 0.72);
+}
+
+
+/* =========================================================
+   VALUE POINTS
+========================================================= */
+
+.value-points {
+  width: 100%;
+}
+
+.value-point {
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns: 55px 1fr;
+
+  gap: 20px;
+
+  padding: 26px 0;
+
+  cursor: default;
+}
+
+
+/* Number */
+
+.value-point-number {
+  padding-top: 3px;
+
+  font-size: 10px;
+
+  letter-spacing: 0.15em;
+
+  color: #c9a36a;
+}
+
+
+/* Content */
+
+.value-point-content h3 {
+  margin: 0 0 9px;
+
+  font-size: clamp(18px, 1.4vw, 24px);
+
+  line-height: 1.2;
+
+  font-weight: 500;
+
+  color: #c9a36a;
+}
+
+.value-point-content p {
+  max-width: 700px;
+
+  margin: 0;
+
+  font-size: clamp(14px, 1vw, 17px);
+
+  line-height: 1.55;
+
+  font-weight: 300;
+
+  color: rgba(255, 255, 255, 0.52);
+}
+
+
+/* Line */
+
+.value-point-line {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  bottom: 0;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.16),
+      transparent
+    );
+
+  transform-origin: left;
+
+  transition:
+    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.value-point:hover .value-point-line {
+  transform: scaleX(0.65);
+
+  background:
+    linear-gradient(
+      90deg,
+      #c9a36a,
+      transparent
+    );
+}
+
+
+/* =========================================================
+   SIDE INDEX
+========================================================= */
+
+.value-side-index {
+  position: absolute;
+
+  right: 22px;
+  top: 50%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 14px;
+
+  transform: translateY(-50%);
+
+  color: rgba(255, 255, 255, 0.3);
+
+  font-size: 8px;
+
+  letter-spacing: 0.18em;
+
+  writing-mode: vertical-rl;
+}
+
+.value-side-index div {
+  width: 1px;
+  height: 55px;
+
+  background: rgba(255, 255, 255, 0.2);
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1500px) {
+  .value-section {
+    padding-top: 140px;
+    padding-bottom: 150px;
+  }
+
+  .value-content {
+    gap: 5vw;
+  }
+
+  .value-visual {
+    min-height: 600px;
+  }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+  .value-section {
+    padding: 90px 6vw;
+  }
+
+  .value-content {
+    grid-template-columns: 1fr 1fr;
+
+    gap: 35px;
+  }
+
+  .value-visual {
+    min-height: 470px;
+  }
+
+  .value-image-card {
+    width: 90%;
+  }
+
+  .orbit-one {
+    width: 400px;
+    height: 400px;
+  }
+
+  .orbit-two {
+    width: 440px;
+    height: 240px;
+  }
+
+  .value-point {
+    grid-template-columns: 40px 1fr;
+
+    gap: 12px;
+  }
+
+  .value-side-index {
+    display: none;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .value-section {
+    min-height: auto;
+
+    padding:
+      75px
+      20px
+      90px;
+  }
+
+
+  /* Remove heavy desktop grid */
+
+  .value-grid {
+    opacity: 0.07;
+
+    background-size: 45px 100%;
+  }
+
+
+  /* Header */
+
+  .value-header {
+    margin-bottom: 45px;
+  }
+
+  .value-eyebrow {
+    font-size: 8px;
+
+    letter-spacing: 0.25em;
+
+    margin-bottom: 14px;
+  }
+
+  .value-header h2 {
+    font-size: clamp(39px, 11vw, 58px);
+
+    line-height: 0.98;
+  }
+
+  .value-title-line {
+    margin-top: 22px;
+
+    width: 55px;
+  }
+
+
+  /* Stack */
+
+  .value-content {
+    grid-template-columns: 1fr;
+
+    gap: 55px;
+  }
+
+
+  /* Image */
+
+  .value-visual {
+    min-height: 390px;
+
+    width: 100%;
+  }
+
+  .value-image-card {
+    width: min(330px, 82vw);
+
+    aspect-ratio: 0.85;
+  }
+
+  .value-image-card img {
+    width: 88%;
+    height: 88%;
+
+    transform: translateZ(25px);
+  }
+
+  .orbit-one {
+    width: 350px;
+    height: 350px;
+  }
+
+  .orbit-two {
+    width: 370px;
+    height: 200px;
+  }
+
+  .value-floating-label {
+    left: 4%;
+    bottom: 0;
+
+    padding: 11px 13px;
+  }
+
+
+  /* Right content */
+
+  .value-details {
+    width: 100%;
+  }
+
+  .value-intro {
+    margin-bottom: 35px;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+  }
+
+
+  /* Points */
+
+  .value-point {
+    grid-template-columns: 32px 1fr;
+
+    gap: 12px;
+
+    padding: 23px 0;
+  }
+
+  .value-point-number {
+    font-size: 9px;
+  }
+
+  .value-point-content h3 {
+    font-size: 18px;
+
+    line-height: 1.25;
+
+    margin-bottom: 8px;
+  }
+
+  .value-point-content p {
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.58);
+  }
+
+
+  /* No desktop hover transform on touch */
+
+  .value-point:hover {
+    transform: none;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .value-section {
+    padding:
+      65px
+      17px
+      75px;
+  }
+
+  .value-header h2 {
+    font-size: 40px;
+
+    letter-spacing: -0.055em;
+  }
+
+  .value-content {
+    gap: 45px;
+  }
+
+  .value-visual {
+    min-height: 340px;
+  }
+
+  .value-image-card {
+    width: 285px;
+  }
+
+  .orbit-one {
+    width: 300px;
+    height: 300px;
+  }
+
+  .orbit-two {
+    width: 315px;
+    height: 175px;
+  }
+
+  .value-floating-label {
+    font-size: 8px;
+  }
+
+  .value-intro {
+    font-size: 16px;
+  }
+
+  .value-point {
+    grid-template-columns: 26px 1fr;
+
+    gap: 10px;
+  }
+
+  .value-point-content h3 {
+    font-size: 17px;
+  }
+
+  .value-point-content p {
+    font-size: 13.5px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .value-grid::after,
+  .value-image-reflection,
+  .value-orbit {
+    animation: none !important;
+  }
+}

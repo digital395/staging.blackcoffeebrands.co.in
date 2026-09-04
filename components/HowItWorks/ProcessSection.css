@@ -1,0 +1,1103 @@
+/* =========================================================
+   PROCESS SECTION
+========================================================= */
+
+.process-section {
+  position: relative;
+  width: 100%;
+  background: #171816;
+  color: #ffffff;
+
+  /*
+    IMPORTANT:
+    Do NOT use overflow: hidden here.
+    overflow on a sticky ancestor can break position: sticky.
+  */
+
+  isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND GRID
+========================================================= */
+
+.process-grid {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 78px 100%;
+
+  opacity: 0.45;
+
+  z-index: -1;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.process-container {
+  position: relative;
+
+  width: min(1500px, 100%);
+
+  margin: 0 auto;
+
+  padding:
+    100px
+    clamp(24px, 5vw, 80px)
+    140px;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 0.72fr)
+    minmax(520px, 1.28fr);
+
+  column-gap: clamp(50px, 7vw, 120px);
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   LEFT STICKY AREA
+========================================================= */
+
+.process-left {
+  position: relative;
+
+  /*
+    This is the important part.
+    The left side stays inside the viewport
+    while the RIGHT side continues scrolling.
+  */
+
+  height: 100%;
+}
+
+
+.process-left-inner {
+  position: sticky;
+
+  top: 40px;
+
+  min-height: calc(100vh - 80px);
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding:
+    30px
+    0
+    30px;
+}
+
+
+/* =========================================================
+   LEFT EYEBROW
+========================================================= */
+
+.process-eyebrow {
+  color: #c9a36a;
+
+  font-size: 9px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.28em;
+
+  line-height: 1.4;
+
+  text-transform: uppercase;
+
+  margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   LEFT TITLE
+========================================================= */
+
+.process-left h2 {
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(48px, 5.2vw, 82px);
+
+  font-weight: 300;
+
+  line-height: 0.92;
+
+  letter-spacing: -0.065em;
+}
+
+
+.process-left h2 span {
+  color: #c9a36a;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-style: italic;
+
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   LEFT LINE
+========================================================= */
+
+.process-left-line {
+  width: 85px;
+
+  height: 1px;
+
+  margin:
+    35px 0
+    30px;
+
+  background: #c9a36a;
+
+  transform-origin: left center;
+
+  opacity: 0.75;
+}
+
+
+/* =========================================================
+   LEFT DESCRIPTION
+========================================================= */
+
+.process-left p {
+  max-width: 340px;
+
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.48);
+
+  font-size: 13px;
+
+  font-weight: 300;
+
+  line-height: 1.8;
+
+  letter-spacing: -0.01em;
+}
+
+
+/* =========================================================
+   LEFT BOTTOM
+========================================================= */
+
+.process-left-bottom {
+  display: flex;
+
+  align-items: center;
+
+  gap: 28px;
+
+  margin-top: 55px;
+}
+
+
+.process-left-bottom span {
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 8px;
+
+  letter-spacing: 0.22em;
+}
+
+
+.process-left-bottom strong {
+  color: #ffffff;
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.08em;
+}
+
+
+.process-left-bottom strong span {
+  color: #c9a36a;
+
+  padding:
+    0 5px;
+
+  letter-spacing: 0;
+}
+
+
+/* =========================================================
+   RIGHT SCROLL AREA
+========================================================= */
+
+.process-right {
+  position: relative;
+
+  width: 100%;
+}
+
+
+/* =========================================================
+   INDIVIDUAL PROJECT ITEM
+========================================================= */
+
+.process-item {
+  position: relative;
+
+  width: 100%;
+
+  margin-bottom: 150px;
+
+  perspective: 1400px;
+}
+
+
+.process-item:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.process-item-number {
+  position: relative;
+
+  margin-bottom: 20px;
+
+  color: rgba(255, 255, 255, 0.72);
+
+  font-size: 11px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.08em;
+
+  line-height: 1;
+}
+
+
+/* =========================================================
+   NUMBER GOLD LINE
+========================================================= */
+
+.process-item-number::after {
+  content: "";
+
+  display: inline-block;
+
+  width: 45px;
+
+  height: 1px;
+
+  margin-left: 14px;
+
+  vertical-align: middle;
+
+  background: rgba(201, 163, 106, 0.55);
+}
+
+
+/* =========================================================
+   ITEM ROW
+========================================================= */
+
+.process-item-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(250px, 0.95fr)
+    minmax(220px, 0.85fr);
+
+  align-items: center;
+
+  gap: clamp(30px, 4vw, 70px);
+}
+
+
+/* =========================================================
+   ALTERNATING LAYOUT
+========================================================= */
+
+.process-item-reverse
+.process-item-row {
+  grid-template-columns:
+    minmax(220px, 0.85fr)
+    minmax(250px, 0.95fr);
+}
+
+
+.process-item-reverse
+.process-image-wrap {
+  order: 2;
+}
+
+
+.process-item-reverse
+.process-item-content {
+  order: 1;
+}
+
+
+/* =========================================================
+   IMAGE WRAPPER
+========================================================= */
+
+.process-image-wrap {
+  position: relative;
+
+  width: 100%;
+
+  perspective: 1200px;
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.process-image {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 0.82;
+
+  overflow: hidden;
+
+  background: #0f100e;
+
+  transform:
+    translateZ(0)
+    rotateX(0)
+    rotateY(0);
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.32);
+
+  transition:
+    transform 1s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 1s ease;
+}
+
+
+.process-image img {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  object-fit: cover;
+
+  display: block;
+
+  transform:
+    scale(1.04)
+    translateZ(0);
+
+  filter:
+    saturate(0.88)
+    contrast(1.04);
+
+  transition:
+    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1s ease;
+}
+
+
+/* =========================================================
+   CINEMATIC IMAGE HOVER
+========================================================= */
+
+.process-item:hover
+.process-image {
+  transform:
+    translateY(-8px)
+    rotateX(1deg)
+    rotateY(-2deg);
+
+  box-shadow:
+    0 40px 100px rgba(0, 0, 0, 0.5);
+}
+
+
+.process-item-reverse:hover
+.process-image {
+  transform:
+    translateY(-8px)
+    rotateX(1deg)
+    rotateY(2deg);
+}
+
+
+.process-item:hover
+.process-image img {
+  transform:
+    scale(1.09)
+    translate3d(0, -1%, 0);
+
+  filter:
+    saturate(1)
+    contrast(1.06);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.process-image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.05),
+      transparent 50%,
+      rgba(0, 0, 0, 0.3)
+    );
+
+  opacity: 0.7;
+
+  transition:
+    opacity 0.8s ease;
+}
+
+
+.process-item:hover
+.process-image-overlay {
+  opacity: 0.35;
+}
+
+
+/* =========================================================
+   IMAGE NUMBER
+========================================================= */
+
+.process-image-index {
+  position: absolute;
+
+  top: 18px;
+
+  left: 18px;
+
+  width: 38px;
+
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #ffffff;
+
+  background: rgba(20, 21, 19, 0.45);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.2);
+
+  backdrop-filter: blur(8px);
+
+  font-size: 9px;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================================
+   IMAGE ARROW
+========================================================= */
+
+.process-image-arrow {
+  position: absolute;
+
+  top: 18px;
+
+  right: 18px;
+
+  width: 38px;
+
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  color: #ffffff;
+
+  background: rgba(20, 21, 19, 0.4);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.2);
+
+  backdrop-filter: blur(8px);
+
+  font-size: 15px;
+
+  opacity: 0.8;
+
+  transform: translateY(0);
+
+  transition:
+    transform 0.5s ease,
+    background 0.5s ease,
+    opacity 0.5s ease;
+}
+
+
+.process-item:hover
+.process-image-arrow {
+  transform: translate(3px, -3px);
+
+  background: rgba(201, 163, 106, 0.8);
+
+  opacity: 1;
+}
+
+
+/* =========================================================
+   RIGHT CONTENT
+========================================================= */
+
+.process-item-content {
+  max-width: 430px;
+}
+
+
+.process-item-label {
+  display: block;
+
+  margin-bottom: 16px;
+
+  color: #c9a36a;
+
+  font-size: 8px;
+
+  font-weight: 500;
+
+  letter-spacing: 0.22em;
+
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   ITEM TITLE
+========================================================= */
+
+.process-item-content h3 {
+  margin: 0 0 22px;
+
+  color: #ffffff;
+
+  font-size:
+    clamp(25px, 2.4vw, 42px);
+
+  font-weight: 300;
+
+  line-height: 1;
+
+  letter-spacing: -0.045em;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.process-item-content p {
+  margin: 0;
+
+  max-width: 390px;
+
+  color: rgba(255, 255, 255, 0.48);
+
+  font-size: 12px;
+
+  font-weight: 300;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   META
+========================================================= */
+
+.process-item-meta {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  max-width: 390px;
+
+  margin-top: 30px;
+
+  padding-top: 14px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.1);
+}
+
+
+.process-item-meta span {
+  color: rgba(255, 255, 255, 0.3);
+
+  font-size: 7px;
+
+  letter-spacing: 0.2em;
+}
+
+
+.process-item-meta strong {
+  color: rgba(201, 163, 106, 0.8);
+
+  font-size: 8px;
+
+  font-weight: 400;
+
+  letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   CINEMATIC ENTRY LINE
+========================================================= */
+
+.process-item::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+
+  bottom: -75px;
+
+  width: 100%;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.12),
+      transparent
+    );
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .process-container {
+    grid-template-columns:
+      minmax(240px, 0.7fr)
+      minmax(450px, 1.3fr);
+
+    column-gap: 50px;
+
+    padding:
+      90px
+      5vw
+      120px;
+  }
+
+
+  .process-left-inner {
+    top: 30px;
+
+    min-height:
+      calc(100vh - 60px);
+  }
+
+
+  .process-left h2 {
+    font-size:
+      clamp(42px, 5vw, 65px);
+  }
+
+
+  .process-item-row,
+  .process-item-reverse
+  .process-item-row {
+    grid-template-columns:
+      minmax(210px, 1fr)
+      minmax(190px, 0.9fr);
+
+    gap: 30px;
+  }
+
+
+  .process-item {
+    margin-bottom: 120px;
+  }
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .process-container {
+    grid-template-columns:
+      220px
+      1fr;
+
+    column-gap: 35px;
+
+    padding:
+      80px
+      30px
+      100px;
+  }
+
+
+  .process-left h2 {
+    font-size: 46px;
+  }
+
+
+  .process-left p {
+    font-size: 11px;
+  }
+
+
+  .process-item-row,
+  .process-item-reverse
+  .process-item-row {
+    grid-template-columns: 1fr;
+
+    gap: 25px;
+  }
+
+
+  .process-item-reverse
+  .process-image-wrap {
+    order: 1;
+  }
+
+
+  .process-item-reverse
+  .process-item-content {
+    order: 2;
+  }
+
+
+  .process-image {
+    aspect-ratio: 1.25 / 1;
+  }
+
+
+  .process-item-content h3 {
+    font-size: 30px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .process-section {
+    width: 100%;
+  }
+
+
+  .process-grid {
+    background-size: 55px 100%;
+
+    opacity: 0.3;
+  }
+
+
+  .process-container {
+    display: block;
+
+    width: 100%;
+
+    padding:
+      70px
+      20px
+      80px;
+  }
+
+
+  /* -------------------------------------------------------
+     LEFT MOBILE
+  ------------------------------------------------------- */
+
+  .process-left {
+    height: auto;
+  }
+
+
+  /*
+    On mobile the desktop two-column sticky layout
+    becomes a normal intro.
+    
+    This prevents the sticky panel from covering
+    the project cards on small screens.
+  */
+
+  .process-left-inner {
+    position: relative;
+
+    top: auto;
+
+    min-height: auto;
+
+    display: block;
+
+    padding: 0;
+
+    margin-bottom: 80px;
+  }
+
+
+  .process-eyebrow {
+    margin-bottom: 16px;
+
+    font-size: 8px;
+  }
+
+
+  .process-left h2 {
+    font-size:
+      clamp(48px, 14vw, 72px);
+
+    line-height: 0.9;
+  }
+
+
+  .process-left-line {
+    margin:
+      28px 0
+      24px;
+  }
+
+
+  .process-left p {
+    max-width: 310px;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+  }
+
+
+  .process-left-bottom {
+    margin-top: 30px;
+  }
+
+
+  /* -------------------------------------------------------
+     RIGHT
+  ------------------------------------------------------- */
+
+  .process-item {
+    margin-bottom: 95px;
+  }
+
+
+  .process-item-number {
+    margin-bottom: 14px;
+
+    font-size: 9px;
+  }
+
+
+  .process-item-number::after {
+    width: 30px;
+
+    margin-left: 9px;
+  }
+
+
+  .process-item-row,
+  .process-item-reverse
+  .process-item-row {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+  }
+
+
+  .process-item-reverse
+  .process-image-wrap {
+    order: 1;
+  }
+
+
+  .process-item-reverse
+  .process-item-content {
+    order: 2;
+  }
+
+
+  .process-image {
+    aspect-ratio: 1.1 / 1;
+
+    box-shadow:
+      0 20px 50px rgba(0, 0, 0, 0.35);
+  }
+
+
+  .process-image-index,
+  .process-image-arrow {
+    width: 32px;
+
+    height: 32px;
+
+    top: 12px;
+  }
+
+
+  .process-image-index {
+    left: 12px;
+  }
+
+
+  .process-image-arrow {
+    right: 12px;
+  }
+
+
+  .process-item-label {
+    margin-bottom: 12px;
+
+    font-size: 7px;
+  }
+
+
+  .process-item-content h3 {
+    margin-bottom: 15px;
+
+    font-size:
+      clamp(25px, 8vw, 36px);
+
+    line-height: 0.98;
+  }
+
+
+  .process-item-content p {
+    max-width: 100%;
+
+    font-size: 11px;
+
+    line-height: 1.7;
+  }
+
+
+  .process-item-meta {
+    margin-top: 22px;
+  }
+
+
+  .process-item::after {
+    bottom: -48px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+  .process-container {
+    padding:
+      60px
+      17px
+      70px;
+  }
+
+
+  .process-left-inner {
+    margin-bottom: 65px;
+  }
+
+
+  .process-left h2 {
+    font-size: 46px;
+  }
+
+
+  .process-item {
+    margin-bottom: 85px;
+  }
+
+
+  .process-image {
+    aspect-ratio: 1 / 1;
+  }
+
+
+  .process-item-content h3 {
+    font-size: 27px;
+  }
+
+
+  .process-item-content p {
+    font-size: 10.5px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .process-image,
+  .process-image img,
+  .process-image-arrow,
+  .process-image-overlay {
+    transition: none !important;
+  }
+
+}

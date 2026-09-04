@@ -1,0 +1,762 @@
+/* =========================================================
+   LUXE CINEMATIC NAVBAR OVERRIDE
+   Add this at the VERY BOTTOM of Navbar.css
+========================================================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+
+  padding: 18px 4vw;
+
+  pointer-events: none;
+
+  /* Cinematic transparent gradient */
+  background:
+    linear-gradient(
+      180deg,
+      rgba(5, 5, 4, 0.92) 0%,
+      rgba(10, 10, 9, 0.78) 45%,
+      rgba(12, 11, 9, 0.42) 78%,
+      rgba(12, 11, 9, 0) 100%
+    );
+
+  /* Slight cinematic glass */
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+
+  isolation: isolate;
+}
+
+/* ---------------------------------------------------------
+   CINEMATIC LIGHT / GOLD GLOW
+--------------------------------------------------------- */
+
+.navbar::before {
+  content: "";
+
+  position: absolute;
+
+  top: -100px;
+  left: 50%;
+
+  width: 650px;
+  height: 220px;
+
+  transform: translateX(-50%);
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(197, 161, 106, 0.11) 0%,
+      rgba(197, 161, 106, 0.045) 35%,
+      transparent 72%
+    );
+
+  filter: blur(35px);
+
+  pointer-events: none;
+
+  z-index: -1;
+}
+
+/* ---------------------------------------------------------
+   BOTTOM CINEMATIC LINE
+--------------------------------------------------------- */
+
+.navbar::after {
+  content: "";
+
+  position: absolute;
+
+  left: 4vw;
+  right: 4vw;
+  bottom: 0;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(197, 161, 106, 0.08) 15%,
+      rgba(197, 161, 106, 0.35) 50%,
+      rgba(197, 161, 106, 0.08) 85%,
+      transparent 100%
+    );
+
+  opacity: 0.8;
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   NAVBAR INNER
+========================================================= */
+
+.navbar-inner {
+  position: relative;
+
+  width: 100%;
+  max-width: 1800px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  pointer-events: auto;
+
+  z-index: 2;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.navbar-logo {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 245px;
+
+  text-decoration: none;
+
+  transform: translateZ(0);
+
+  transition:
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.5s ease;
+}
+
+.navbar-logo img {
+  display: block;
+
+  width: 100%;
+  max-width: 245px;
+
+  height: auto;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(0 3px 12px rgba(0, 0, 0, 0.65))
+    drop-shadow(0 0 18px rgba(197, 161, 106, 0.06));
+
+  transition:
+    filter 0.5s ease,
+    transform 0.5s ease;
+}
+
+.navbar-logo:hover {
+  transform: translateY(-2px);
+}
+
+.navbar-logo:hover img {
+  filter:
+    drop-shadow(0 5px 18px rgba(0, 0, 0, 0.7))
+    drop-shadow(0 0 24px rgba(197, 161, 106, 0.2));
+}
+
+
+/* =========================================================
+   DESKTOP NAV
+========================================================= */
+
+.desktop-nav {
+  display: flex;
+
+  align-items: center;
+
+  gap: clamp(18px, 2.3vw, 42px);
+}
+
+
+/* =========================================================
+   NAV LINK
+========================================================= */
+
+.nav-link {
+  position: relative;
+
+  color: rgba(255, 255, 255, 0.76);
+
+  text-decoration: none;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  letter-spacing: 0.1em;
+
+  padding: 9px 0;
+
+  text-transform: none;
+
+  transition:
+    color 0.35s ease,
+    opacity 0.35s ease,
+    transform 0.35s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+
+  text-shadow:
+    0 0 14px rgba(255, 255, 255, 0.18);
+}
+
+
+/* GOLD UNDERLINE */
+
+.nav-line {
+  position: absolute;
+
+  left: 0;
+  bottom: 1px;
+
+  width: 100%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #8c6a3e,
+      #c7a15c,
+      #e1c48b
+    );
+
+  transform: scaleX(0);
+
+  transform-origin: right;
+
+  transition:
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+
+  box-shadow:
+    0 0 8px rgba(199, 161, 92, 0.35);
+}
+
+.nav-link:hover .nav-line {
+  transform: scaleX(1);
+
+  transform-origin: left;
+}
+
+
+/* =========================================================
+   BOOK NOW - CINEMATIC GOLD
+========================================================= */
+
+.nav-book {
+  position: relative;
+
+  min-width: 112px;
+
+  padding: 12px 21px;
+
+  border: 1px solid rgba(199, 161, 92, 0.7);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(199, 161, 92, 0.03),
+      rgba(199, 161, 92, 0.10)
+    );
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-family: inherit;
+
+  font-size: 11px;
+  font-weight: 500;
+
+  letter-spacing: 0.13em;
+
+  cursor: pointer;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  transition:
+    color 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease,
+    transform 0.45s ease;
+}
+
+
+/* GOLD FILL */
+
+.nav-book::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      110deg,
+      #9d7846,
+      #c7a15c,
+      #dfc083
+    );
+
+  transform: translateY(105%);
+
+  transition:
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+
+  z-index: -1;
+}
+
+
+/* LIGHT SWEEP */
+
+.nav-book::after {
+  content: "";
+
+  position: absolute;
+
+  top: -30%;
+  left: -100%;
+
+  width: 60%;
+  height: 160%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.28),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition:
+    left 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+
+  z-index: -1;
+}
+
+.nav-book:hover {
+  color: #111;
+
+  border-color: #c7a15c;
+
+  box-shadow:
+    0 8px 35px rgba(0, 0, 0, 0.35),
+    0 0 25px rgba(199, 161, 92, 0.13);
+}
+
+.nav-book:hover::before {
+  transform: translateY(0);
+}
+
+.nav-book:hover::after {
+  left: 150%;
+}
+
+
+/* =========================================================
+   MOBILE MENU BUTTON
+========================================================= */
+
+.menu-button {
+  display: none;
+
+  width: 44px;
+  height: 44px;
+
+  border: 1px solid rgba(199, 161, 92, 0.42);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(15, 15, 14, 0.82),
+      rgba(8, 8, 7, 0.58)
+    );
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 6px;
+
+  cursor: pointer;
+
+  box-shadow:
+    inset 0 0 20px rgba(255, 255, 255, 0.015),
+    0 8px 30px rgba(0, 0, 0, 0.3);
+
+  transition:
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.menu-button:hover {
+  border-color: rgba(199, 161, 92, 0.8);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(40, 33, 23, 0.9),
+      rgba(10, 10, 9, 0.8)
+    );
+}
+
+.menu-button span {
+  width: 18px;
+  height: 1px;
+
+  background: #fff;
+
+  transition:
+    transform 0.4s ease,
+    opacity 0.4s ease,
+    background 0.3s ease;
+}
+
+.menu-button:hover span {
+  background: #c7a15c;
+}
+
+.menu-button.active span:first-child {
+  transform:
+    translateY(3.5px)
+    rotate(45deg);
+}
+
+.menu-button.active span:last-child {
+  transform:
+    translateY(-3.5px)
+    rotate(-45deg);
+}
+
+
+/* =========================================================
+   MOBILE FULLSCREEN MENU
+========================================================= */
+
+.mobile-menu {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 900;
+
+  background:
+    radial-gradient(
+      circle at 75% 15%,
+      rgba(199, 161, 92, 0.12),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(100, 78, 45, 0.08),
+      transparent 30%
+    ),
+    linear-gradient(
+      145deg,
+      #161614 0%,
+      #0b0b0a 48%,
+      #050505 100%
+    );
+
+  padding:
+    120px 8vw 50px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+
+/* MOBILE DECORATIVE LIGHT */
+
+.mobile-menu::before {
+  content: "";
+
+  position: absolute;
+
+  width: 500px;
+  height: 500px;
+
+  top: -250px;
+  right: -200px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(199, 161, 92, 0.13),
+      transparent 68%
+    );
+
+  filter: blur(20px);
+
+  pointer-events: none;
+}
+
+
+/* MOBILE LINKS */
+
+.mobile-menu a {
+  position: relative;
+
+  color: rgba(255, 255, 255, 0.9);
+
+  text-decoration: none;
+
+  font-size: clamp(30px, 8vw, 58px);
+
+  font-weight: 300;
+
+  letter-spacing: -0.035em;
+
+  padding: 10px 0;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 20px;
+
+  transition:
+    color 0.35s ease,
+    padding-left 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mobile-menu a:hover {
+  color: #c7a15c;
+
+  padding-left: 10px;
+}
+
+
+/* MOBILE NUMBER */
+
+.mobile-number {
+  font-size: 10px !important;
+
+  letter-spacing: 0.15em;
+
+  color: #c7a15c;
+
+  width: 25px;
+
+  flex-shrink: 0;
+}
+
+
+/* MOBILE BOOK */
+
+.mobile-book {
+  margin-top: 25px;
+
+  width: fit-content;
+
+  padding: 15px 27px;
+
+  border: 1px solid #c7a15c;
+
+  background:
+    linear-gradient(
+      120deg,
+      #9c7643,
+      #c7a15c,
+      #dfc083
+    );
+
+  color: #111;
+
+  font-family: inherit;
+
+  font-size: 11px !important;
+
+  font-weight: 600;
+
+  letter-spacing: 0.12em !important;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 35px rgba(0, 0, 0, 0.3);
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.mobile-book:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 40px rgba(199, 161, 92, 0.18);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+  .navbar {
+    padding: 18px 4vw;
+  }
+
+  .desktop-nav {
+    gap: 18px;
+  }
+
+  .nav-link {
+    font-size: 9px;
+  }
+
+  .navbar-logo {
+    width: 190px;
+  }
+
+  .nav-book {
+    min-width: 100px;
+
+    padding:
+      11px 17px;
+
+    font-size: 8px;
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .navbar {
+    padding:
+      16px 5vw;
+  }
+
+  .navbar::after {
+    left: 5vw;
+    right: 5vw;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .menu-button {
+    display: flex;
+  }
+
+  .navbar-logo {
+    width: 180px;
+  }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+  .navbar {
+    padding:
+      14px 5vw;
+  }
+
+  .navbar-logo {
+    width: 150px;
+  }
+
+  .menu-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobile-menu {
+    padding:
+      110px 7vw 40px;
+  }
+
+  .mobile-menu a {
+    font-size:
+      clamp(28px, 9vw, 42px);
+
+    gap: 15px;
+  }
+
+  .mobile-number {
+    font-size: 8px !important;
+    width: 20px;
+  }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+  .navbar-logo {
+    width: 135px;
+  }
+
+  .menu-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .mobile-menu a {
+    font-size: 27px;
+  }
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .navbar-logo,
+  .navbar-logo img,
+  .nav-link,
+  .nav-line,
+  .nav-book,
+  .nav-book::before,
+  .nav-book::after,
+  .menu-button,
+  .menu-button span,
+  .mobile-menu a,
+  .mobile-book {
+    transition: none !important;
+  }
+}

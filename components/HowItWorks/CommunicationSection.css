@@ -1,0 +1,255 @@
+/* =========================================================
+   LUXE — COMMUNICATION & TRACKING
+   Exact dark editorial layout based on the supplied design
+========================================================= */
+
+.communication-section {
+  position: relative;
+  width: 100%;
+  background: #171816;
+  color: #fff;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.communication-container {
+  width: min(100%, 1280px);
+  margin: 0 auto;
+  padding: 42px 42px 58px;
+
+  display: grid;
+  grid-template-columns: minmax(300px, 0.82fr) minmax(420px, 1.18fr);
+  column-gap: clamp(55px, 8vw, 125px);
+  align-items: start;
+}
+
+/* ---------------------------------------------------------
+   LEFT — FIXED EDITORIAL HEADING
+--------------------------------------------------------- */
+
+.communication-heading {
+  padding-top: 1px;
+}
+
+.communication-heading span {
+  display: block;
+  margin: 0 0 7px;
+
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 7px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.communication-heading h2 {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(25px, 2.4vw, 34px);
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+/* ---------------------------------------------------------
+   RIGHT — CONTENT
+--------------------------------------------------------- */
+
+.communication-list {
+  width: 100%;
+}
+
+.communication-item {
+  position: relative;
+  padding: 0 0 16px;
+}
+
+.communication-item + .communication-item {
+  padding-top: 22px;
+}
+
+.communication-item:first-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.communication-item h3 {
+  margin: 0 0 6px;
+
+  color: #c9a36a;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.communication-item p {
+  max-width: 650px;
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.48);
+  font-size: 11px;
+  font-weight: 300;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+/* ---------------------------------------------------------
+   SUBTLE CINEMATIC LIGHT
+--------------------------------------------------------- */
+
+.communication-section::before {
+  content: "";
+  position: absolute;
+  top: -180px;
+  left: 20%;
+  width: 55%;
+  height: 260px;
+
+  background: radial-gradient(
+    ellipse,
+    rgba(201, 163, 106, 0.035) 0%,
+    transparent 68%
+  );
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ---------------------------------------------------------
+   DESKTOP LARGE
+--------------------------------------------------------- */
+
+@media (min-width: 1440px) {
+  .communication-container {
+    padding-top: 48px;
+    padding-bottom: 64px;
+  }
+
+  .communication-heading h2 {
+    font-size: 36px;
+  }
+
+  .communication-item h3 {
+    font-size: 13px;
+  }
+
+  .communication-item p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
+
+/* ---------------------------------------------------------
+   TABLET
+--------------------------------------------------------- */
+
+@media (max-width: 900px) {
+  .communication-container {
+    grid-template-columns: minmax(220px, 0.8fr) minmax(330px, 1.2fr);
+    column-gap: 45px;
+    padding: 38px 32px 52px;
+  }
+
+  .communication-heading h2 {
+    font-size: clamp(23px, 3.3vw, 31px);
+  }
+
+  .communication-item h3 {
+    font-size: 11px;
+  }
+
+  .communication-item p {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+}
+
+/* ---------------------------------------------------------
+   MOBILE — STACKED BUT SAME VISUAL LANGUAGE
+--------------------------------------------------------- */
+
+@media (max-width: 700px) {
+  .communication-container {
+    display: block;
+    padding: 55px 22px 58px;
+  }
+
+  .communication-heading {
+    margin-bottom: 38px;
+  }
+
+  .communication-heading span {
+    margin-bottom: 9px;
+    font-size: 7px;
+  }
+
+  .communication-heading h2 {
+    max-width: 330px;
+    font-size: clamp(30px, 8.5vw, 42px);
+    line-height: 0.98;
+  }
+
+  .communication-list {
+    width: 100%;
+  }
+
+  .communication-item {
+    padding-bottom: 19px;
+  }
+
+  .communication-item + .communication-item {
+    padding-top: 24px;
+  }
+
+  .communication-item h3 {
+    margin-bottom: 8px;
+    font-size: 12px;
+  }
+
+  .communication-item p {
+    max-width: 100%;
+    font-size: 11px;
+    line-height: 1.55;
+  }
+}
+
+/* ---------------------------------------------------------
+   SMALL MOBILE
+--------------------------------------------------------- */
+
+@media (max-width: 380px) {
+  .communication-container {
+    padding: 48px 18px 50px;
+  }
+
+  .communication-heading {
+    margin-bottom: 32px;
+  }
+
+  .communication-heading h2 {
+    font-size: 29px;
+  }
+
+  .communication-item h3 {
+    font-size: 11px;
+  }
+
+  .communication-item p {
+    font-size: 10px;
+  }
+}
+
+/* ---------------------------------------------------------
+   REDUCED MOTION
+--------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .communication-heading,
+  .communication-item {
+    animation: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
